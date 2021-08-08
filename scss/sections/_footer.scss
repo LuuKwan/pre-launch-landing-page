@@ -1,0 +1,64 @@
+@use "../abstract" as ab;
+.footer{
+    margin-top: 6.9375rem;
+    
+    &.container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 4rem;
+    }
+
+    &__item{
+        text-align: center;
+        &__icon{
+            width: 65px;
+            height: 65px;
+            border-radius: 12px;
+            background-color: chocolate;
+            margin: 0 auto;
+            position: relative;
+            img{
+                position: absolute;
+                inset: 0;
+                margin: auto;
+            }
+        }
+
+
+        h3{
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 28px;
+            margin: 3rem 0 1.5rem 0;
+        }
+        p{
+            line-height: 26px;
+        }
+    }
+
+    @include ab.respond-to(medium){
+        margin-top: 8.875rem;
+
+        &.container{
+            grid-template-columns: 1fr 1fr;
+            
+        }
+
+        &__item{
+            text-align: left;
+            &__icon{
+                margin: 0;
+            }
+        }
+    }
+
+    @include ab.respond-to(large){
+        &.container{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            
+        }
+
+    }
+
+}

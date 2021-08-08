@@ -1,0 +1,23 @@
+@use "../abstract/color" as c;
+@use "../abstract/mixin" as mi;
+.btn{
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: c.$darkBlue;
+    padding: 0.6875rem 0.9375rem;   
+    background: c.$lightGray;
+    outline: none;
+    border-radius: 8px;
+    transition: color 350ms,
+                background 350ms;
+    &:hover{
+        color: c.$white;
+        background: c.$darkBlue;
+    }
+
+    @include mi.respond-to(medium){
+        padding:1rem 1.6875rem;
+        line-height: 26px;
+    }
+}

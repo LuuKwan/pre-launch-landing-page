@@ -1,0 +1,11 @@
+
+$breakPoints:(
+    'medium':  768px,
+    'large': 1000px,
+    'xlarge': 1200px
+);
+@mixin respond-to ($breakPoint) {
+    @media (min-width:(map-get($breakPoints,$breakPoint))){
+        @content;
+    }
+}

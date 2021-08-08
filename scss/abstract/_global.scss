@@ -1,0 +1,55 @@
+@use 'mixin' as mix;
+@use 'color' as clr;
+//Basic setting
+html{
+    font: 100%;
+    font-family: 'Barlow', sans-serif;}
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    @include mix.respond-to(medium){
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    @include mix.respond-to(large){
+        padding-left: 10.3125rem;
+        padding-right: 10.3125rem;
+    }
+}
+
+.flex{
+    display: flex;
+    &--column{
+        flex-direction: column;
+    }
+    &--jc--sa{
+        justify-content: space-around;
+    }
+    &--jc--sb{
+        justify-content: space-between;
+    }
+    &--jc--se{
+        justify-content: space-evenly;
+    }
+    &--ai--c{
+        align-items: center;
+    }
+}
+
+
+//typography
+
+h1,h2,h3{
+    color: clr.$darkBlue;
+    font-weight: 700;
+}
+p{
+    color: clr.$lightPurple;
+    font-weight: 300;
+}

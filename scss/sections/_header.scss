@@ -1,0 +1,25 @@
+@use '../abstract' as ab;
+
+.header{
+    padding-top: 1.4375rem;
+    &__logo{
+        width: 40px;
+        height: 40px;
+    }
+    
+}
+@include ab.respond-to(medium){
+    .header{
+        padding-top: 2.5rem;
+        
+    }
+    
+}
+
+@include ab.respond-to(large){
+    .header{
+        padding-top: 3.4375;
+       
+    }
+    
+}
